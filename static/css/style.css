@@ -1,0 +1,13 @@
+body{
+margin:0px;
+padding:0px;
+overflow-x:hidden;
+}
+.navbar{
+  background-color:green;
+  border:none;
+  border-radius:0px;
+}
+.navbar-nav>li>a{
+color:white !important;
+}

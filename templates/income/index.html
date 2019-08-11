@@ -1,0 +1,31 @@
+{% extends 'base/master.html' %}
+
+{% block 'content' %}
+<div class="row">
+    <div class="container">
+        <h3>All Income</h3>
+        <a href="{% url 'income_create' %}" class="btn btn-primary">Add Income</a>
+
+    <table class="table">
+        <thead>
+          <th>
+              Title
+          </th>
+        <th>
+            cost
+        </th>
+        <th>Action</th>
+        </thead>
+        <tbody>
+        {% for x in income %}
+          <tr>
+              <td>{{x.title}}</td>
+              <td>{{x.rupes}}</td>
+              <td><a href="{% url 'income_edit' x.id %}">Edit</a> | <a href="{% url 'income_del' x.id %}">del</a> </td>
+          </tr>
+       {% endfor %}
+        </tbody>
+    </table>
+            </div>
+</div>
+{% endblock  %}

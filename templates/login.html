@@ -1,0 +1,27 @@
+{% extends 'base/master.html' %}
+
+{% block 'content' %}
+
+  <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+          <h3>Signup</h3>
+          {% if err %}
+            <div class="alert alert-danger">{{err}}</div>
+          {% endif %}
+            <form method="post" action="{% url 'login' %}">
+                 <div class="form-group">
+                     <label for="username">Username</label>
+                     <input type="text" class="form-control" name="username" id="username">
+                 </div>
+
+                 <div class="form-group">
+                     <label for="password">Password</label>
+                     <input type="password" class="form-control" name="password" id="password">
+                 </div>
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+      </div>
+  </div>
+
+{% endblock %}
